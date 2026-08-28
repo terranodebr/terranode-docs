@@ -11,8 +11,10 @@
       
       
       
-        <link rel="prev" href="../cli/">
+        <link rel="prev" href="../getting-started/">
       
+      
+        <link rel="next" href="../glossary/">
       
       
         
@@ -23,7 +25,7 @@
     
     
       
-        <title>Glossary - terranode Documentation</title>
+        <title>Using the tn CLI - terranode Documentation</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glossary" class="md-skip">
+        <a href="#using-the-tn-command-line" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Glossary
+              Using the tn CLI
             
           </span>
         </div>
@@ -243,9 +245,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../cli/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -262,11 +266,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
         
   
   
@@ -370,10 +372,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the tn CLI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -389,6 +418,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signing-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-catalogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with catalogs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uploading-data-into-a-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uploading data into a catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automating-without-your-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating without your password
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -397,19 +490,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
@@ -425,7 +509,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -450,6 +533,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signing-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-catalogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with catalogs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uploading-data-into-a-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uploading data into a catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automating-without-your-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating without your password
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -465,47 +600,67 @@
 
 
 
-<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
-<p><strong>Organization (org)</strong>
-:   The tenant boundary in terranode. Every user belongs to exactly one
-    organization. All catalog, project, and survey data is scoped to an
-    organization, both at the application level and, as a defense-in-depth
-    layer, via PostgreSQL Row-Level Security.</p>
-<p><strong>terranode (the perennial org)</strong>
-:   A built-in, always-present organization owned by the terranode team
-    itself, used to publish a shared base catalog (base maps, reference
-    layers) that other organizations can use without owning.</p>
-<p><strong>Catalog</strong>
-:   The set of reusable GIS resources — layers, styles, raster and vector
-    sources — that an organization curates. Catalog data is imported and
-    exported, not hand-edited feature-by-feature, in the initial release.</p>
-<p><strong>Layer</strong>
-:   A single named GIS dataset (vector or raster) in a catalog, with an
-    assigned style and metadata/tags. Layers are owned by exactly one
-    catalog but may be referenced by many projects.</p>
-<p><strong>Project</strong>
-:   A configured field data collection effort: a boundary, a set of
-    participating catalog layers, and a set of surveys. Projects <em>use</em>
-    catalog data — they never own or duplicate it.</p>
-<p><strong>Survey</strong>
-:   A configurable form (similar in spirit to SurveyMonkey) that field
-    users fill out on mobile devices while collecting GIS data — points,
-    lines, polygons, and attached media (photos, video, audio). A survey can
-    be created directly or from a survey template.</p>
-<p><strong>Survey template</strong>
-:   An organization-scoped reusable form definition. Creating a survey from a
-    template copies the template schema into the survey.</p>
-<p><strong>System survey template</strong>
-:   A global template configured by terranode administrators and listed
-    alongside organization-scoped templates.</p>
-<p><strong>Bundle</strong>
-:   The offline package a mobile client downloads before a field visit:
-    the project's boundary, participating layers, and survey definitions,
-    packaged so the field app can work with no network connectivity.</p>
-<p><strong>Row-Level Security (RLS)</strong>
-:   A native PostgreSQL feature enforcing tenant isolation at the database
-    layer, independent of application-level query filtering. Used here as
-    a second, fail-closed layer beneath terranode's org-scoping.</p>
+<h1 id="using-the-tn-command-line">Using the <code>tn</code> command line<a class="headerlink" href="#using-the-tn-command-line" title="Permanent link">&para;</a></h1>
+<p><code>tn</code> is terranode's command-line client — everything you can do with
+catalogs, data sources, and uploads through the API, from your terminal
+or a script, instead of clicking through the app.</p>
+<div class="admonition note">
+<p class="admonition-title">Early preview</p>
+<p><code>tn</code> is new and not yet published anywhere you can <code>pip install</code> it
+from directly — ask your terranode contact for access while that's
+being set up.</p>
+</div>
+<h2 id="signing-in">Signing in<a class="headerlink" href="#signing-in" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>auth<span class="w"> </span>login
+</code></pre></div>
+<p>You'll be asked for your email and password. <code>tn</code> stores a token locally
+(<code>~/.config/tn/config.json</code>) so you don't have to log in again for every
+command. If you belong to more than one organization, pick a default:</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>config<span class="w"> </span>set-org<span class="w"> </span>&lt;organization-id&gt;
+</code></pre></div>
+<p>(<code>tn orgs list</code> shows the organizations you belong to and their IDs.)</p>
+<h2 id="working-with-catalogs">Working with catalogs<a class="headerlink" href="#working-with-catalogs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>catalogs<span class="w"> </span>list
+tn<span class="w"> </span>catalogs<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;Field boundaries&quot;</span><span class="w"> </span>--visibility<span class="w"> </span>private
+tn<span class="w"> </span>catalogs<span class="w"> </span>get<span class="w"> </span>&lt;catalog-id&gt;
+tn<span class="w"> </span>catalogs<span class="w"> </span>update<span class="w"> </span>&lt;catalog-id&gt;<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;New name&quot;</span>
+tn<span class="w"> </span>catalogs<span class="w"> </span>delete<span class="w"> </span>&lt;catalog-id&gt;
+</code></pre></div>
+<p>Add <code>--json</code> after <code>tn</code> (e.g. <code>tn --json catalogs list</code>) to get
+machine-readable output instead of a table — handy for piping into
+<code>jq</code> or another script.</p>
+<h2 id="uploading-data-into-a-catalog">Uploading data into a catalog<a class="headerlink" href="#uploading-data-into-a-catalog" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>uploads<span class="w"> </span>create<span class="w"> </span>&lt;catalog-id&gt;<span class="w"> </span>./roads.geojson<span class="w"> </span>--wait
+</code></pre></div>
+<p>This uploads the file and, with <code>--wait</code>, blocks until terranode has
+finished turning it into one or more data sources. Drop <code>--wait</code> to
+return immediately and check later:</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>uploads<span class="w"> </span>get<span class="w"> </span>&lt;catalog-id&gt;<span class="w"> </span>&lt;upload-id&gt;
+tn<span class="w"> </span>datasources<span class="w"> </span>list<span class="w"> </span>&lt;catalog-id&gt;
+</code></pre></div>
+<p>Data sources themselves aren't created or edited directly — they're
+always the result of an upload finishing processing.</p>
+<h2 id="automating-without-your-password">Automating without your password<a class="headerlink" href="#automating-without-your-password" title="Permanent link">&para;</a></h2>
+<p>If you want a script, a CI pipeline, or another server to use <code>tn</code>
+without your personal login, create an API key instead (you need to be
+an organization owner):</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;ci-pipeline&quot;</span><span class="w"> </span>--role<span class="w"> </span>editor
+</code></pre></div>
+<p>This mints a long-lived credential and, by default, switches <em>this</em>
+machine to use it. If the key is actually meant for somewhere else (a CI
+secret, a different machine), add <code>--mint-only</code> so your own session here
+is left alone and the key is just printed for you to copy:</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;ci-pipeline&quot;</span><span class="w"> </span>--role<span class="w"> </span>editor<span class="w"> </span>--mint-only
+</code></pre></div>
+<p>Wherever the key ends up, set it as <code>TN_TOKEN</code> in that environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">TN_TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;the key you were given&gt;&quot;</span>
+</code></pre></div>
+<p>List or revoke keys for your organization at any time:</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>list
+tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>revoke<span class="w"> </span>&lt;key-id&gt;
+</code></pre></div>
+<p>See the <a href="../glossary/">Glossary</a> for terms like <em>catalog</em> and
+<em>organization</em> used throughout this page.</p>
 
 
 
