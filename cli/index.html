@@ -446,6 +446,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resource-refs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource refs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#working-with-catalogs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -551,6 +562,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resource-refs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource refs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#working-with-catalogs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -601,66 +623,78 @@
 
 
 <h1 id="using-the-tn-command-line">Using the <code>tn</code> command line<a class="headerlink" href="#using-the-tn-command-line" title="Permanent link">&para;</a></h1>
-<p><code>tn</code> is terranode's command-line client — everything you can do with
-catalogs, data sources, and uploads through the API, from your terminal
-or a script, instead of clicking through the app.</p>
+<p><code>tn</code> is terranode's command-line client for working with organizations,
+catalogs, uploads, and data sources from a terminal or script.</p>
 <div class="admonition note">
 <p class="admonition-title">Early preview</p>
-<p><code>tn</code> is new and not yet published anywhere you can <code>pip install</code> it
-from directly — ask your terranode contact for access while that's
-being set up.</p>
+<p><code>tn</code> is new and not yet published anywhere you can <code>pip install</code> it from
+directly. Ask your terranode contact for access while that is being set up.</p>
 </div>
 <h2 id="signing-in">Signing in<a class="headerlink" href="#signing-in" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>tn<span class="w"> </span>auth<span class="w"> </span>login
 </code></pre></div>
-<p>You'll be asked for your email and password. <code>tn</code> stores a token locally
-(<code>~/.config/tn/config.json</code>) so you don't have to log in again for every
-command. If you belong to more than one organization, pick a default:</p>
-<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>config<span class="w"> </span>set-org<span class="w"> </span>&lt;organization-id&gt;
+<p>You'll be asked for your email and password. <code>tn</code> stores a token locally in
+<code>~/.config/tn/config.json</code> so you don't have to log in again for every command.</p>
+<p>If you belong to more than one organization, pick a default organization ref:</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>config<span class="w"> </span>set-org<span class="w"> </span>acme
 </code></pre></div>
-<p>(<code>tn orgs list</code> shows the organizations you belong to and their IDs.)</p>
+<p><code>tn orgs list</code> shows the organizations you belong to, including each
+organization's slug and id.</p>
+<h2 id="resource-refs">Resource refs<a class="headerlink" href="#resource-refs" title="Permanent link">&para;</a></h2>
+<p>A ref is the value you type to identify something. For readable resources, a ref
+can be either the stable UUID id or the human-friendly slug shown in <code>tn</code> output.</p>
+<p>Refs accepted by <code>tn</code> today:</p>
+<ul>
+<li>Organization ref: organization id or slug.</li>
+<li>Catalog ref: catalog id or slug inside the selected organization.</li>
+<li>Data source ref: data source id or slug inside a catalog.</li>
+<li>Upload id: uploads are not named, so uploads stay id-only.</li>
+<li>API key id: API keys stay id-only.</li>
+</ul>
+<p>Slugs are easier to type, but they can be renamed. Use ids for long-lived scripts
+when stability matters.</p>
 <h2 id="working-with-catalogs">Working with catalogs<a class="headerlink" href="#working-with-catalogs" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>tn<span class="w"> </span>catalogs<span class="w"> </span>list
 tn<span class="w"> </span>catalogs<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;Field boundaries&quot;</span><span class="w"> </span>--visibility<span class="w"> </span>private
-tn<span class="w"> </span>catalogs<span class="w"> </span>get<span class="w"> </span>&lt;catalog-id&gt;
-tn<span class="w"> </span>catalogs<span class="w"> </span>update<span class="w"> </span>&lt;catalog-id&gt;<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;New name&quot;</span>
-tn<span class="w"> </span>catalogs<span class="w"> </span>delete<span class="w"> </span>&lt;catalog-id&gt;
+tn<span class="w"> </span>catalogs<span class="w"> </span>get<span class="w"> </span>field-boundaries
+tn<span class="w"> </span>catalogs<span class="w"> </span>update<span class="w"> </span>field-boundaries<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;New name&quot;</span>
+tn<span class="w"> </span>catalogs<span class="w"> </span>delete<span class="w"> </span>field-boundaries
 </code></pre></div>
-<p>Add <code>--json</code> after <code>tn</code> (e.g. <code>tn --json catalogs list</code>) to get
-machine-readable output instead of a table — handy for piping into
-<code>jq</code> or another script.</p>
+<p>Add <code>--json</code> after <code>tn</code> to get machine-readable output instead of a table:</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>--json<span class="w"> </span>catalogs<span class="w"> </span>list
+</code></pre></div>
 <h2 id="uploading-data-into-a-catalog">Uploading data into a catalog<a class="headerlink" href="#uploading-data-into-a-catalog" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>uploads<span class="w"> </span>create<span class="w"> </span>&lt;catalog-id&gt;<span class="w"> </span>./roads.geojson<span class="w"> </span>--wait
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>uploads<span class="w"> </span>create<span class="w"> </span>field-boundaries<span class="w"> </span>./roads.geojson<span class="w"> </span>--wait
 </code></pre></div>
-<p>This uploads the file and, with <code>--wait</code>, blocks until terranode has
-finished turning it into one or more data sources. Drop <code>--wait</code> to
-return immediately and check later:</p>
-<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>uploads<span class="w"> </span>get<span class="w"> </span>&lt;catalog-id&gt;<span class="w"> </span>&lt;upload-id&gt;
-tn<span class="w"> </span>datasources<span class="w"> </span>list<span class="w"> </span>&lt;catalog-id&gt;
+<p>This uploads the file and, with <code>--wait</code>, blocks until terranode has finished
+turning it into one or more data sources. Drop <code>--wait</code> to return immediately
+and check later:</p>
+<div class="highlight"><pre><span></span><code>tn<span class="w"> </span>uploads<span class="w"> </span>list<span class="w"> </span>field-boundaries
+tn<span class="w"> </span>uploads<span class="w"> </span>get<span class="w"> </span>field-boundaries<span class="w"> </span>&lt;upload-id&gt;
+tn<span class="w"> </span>datasources<span class="w"> </span>list<span class="w"> </span>field-boundaries
+tn<span class="w"> </span>datasources<span class="w"> </span>get<span class="w"> </span>field-boundaries<span class="w"> </span>roads
 </code></pre></div>
-<p>Data sources themselves aren't created or edited directly — they're
-always the result of an upload finishing processing.</p>
+<p>Data sources themselves aren't created or edited directly. They are created when
+an upload finishes processing.</p>
 <h2 id="automating-without-your-password">Automating without your password<a class="headerlink" href="#automating-without-your-password" title="Permanent link">&para;</a></h2>
-<p>If you want a script, a CI pipeline, or another server to use <code>tn</code>
-without your personal login, create an API key instead (you need to be
-an organization owner):</p>
+<p>If you want a script, CI pipeline, or server to use <code>tn</code> without your personal
+login, create an API key instead. You need to be an organization owner.</p>
 <div class="highlight"><pre><span></span><code>tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;ci-pipeline&quot;</span><span class="w"> </span>--role<span class="w"> </span>editor
 </code></pre></div>
-<p>This mints a long-lived credential and, by default, switches <em>this</em>
-machine to use it. If the key is actually meant for somewhere else (a CI
-secret, a different machine), add <code>--mint-only</code> so your own session here
-is left alone and the key is just printed for you to copy:</p>
+<p>This mints a long-lived credential and, by default, switches this machine to use
+it. If the key is meant for somewhere else, add <code>--mint-only</code>:</p>
 <div class="highlight"><pre><span></span><code>tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;ci-pipeline&quot;</span><span class="w"> </span>--role<span class="w"> </span>editor<span class="w"> </span>--mint-only
 </code></pre></div>
 <p>Wherever the key ends up, set it as <code>TN_TOKEN</code> in that environment:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">TN_TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;the key you were given&gt;&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TN_ORG</span><span class="o">=</span><span class="s2">&quot;acme&quot;</span>
 </code></pre></div>
 <p>List or revoke keys for your organization at any time:</p>
 <div class="highlight"><pre><span></span><code>tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>list
 tn<span class="w"> </span>orgs<span class="w"> </span>api-keys<span class="w"> </span>revoke<span class="w"> </span>&lt;key-id&gt;
 </code></pre></div>
-<p>See the <a href="../glossary/">Glossary</a> for terms like <em>catalog</em> and
-<em>organization</em> used throughout this page.</p>
+<p>See the <a href="../glossary/">Glossary</a> for terms like <em>catalog</em> and <em>organization</em> used
+throughout this page.</p>
 
 
 
