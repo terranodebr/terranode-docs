@@ -633,8 +633,9 @@ directly. Ask your terranode contact for access while that is being set up.</p>
 <h2 id="signing-in">Signing in<a class="headerlink" href="#signing-in" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>tn<span class="w"> </span>auth<span class="w"> </span>login
 </code></pre></div>
-<p>You'll be asked for your email and password. <code>tn</code> stores a token locally in
-<code>~/.config/tn/config.json</code> so you don't have to log in again for every command.</p>
+<p>You'll be asked for your email and password. <code>tn</code> stores its own command-line
+token locally in <code>~/.config/tn/config.json</code> so you don't have to log in again
+for every command. This is separate from your browser session in the web app.</p>
 <p>If you belong to more than one organization, pick a default organization ref:</p>
 <div class="highlight"><pre><span></span><code>tn<span class="w"> </span>config<span class="w"> </span>set-org<span class="w"> </span>acme
 </code></pre></div>
