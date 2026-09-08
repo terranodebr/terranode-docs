@@ -483,6 +483,22 @@
 :   A single named GIS dataset (vector or raster) in a catalog, with an
     assigned style and metadata/tags. Layers are owned by exactly one
     catalog but may be referenced by many projects.</p>
+<p><strong>Integration</strong>
+:   An organization's connection to an external GIS platform — today ArcGIS
+    Online or ArcGIS Enterprise. Data flows one way, into terranode: the
+    user picks layers on the external side and they are pulled into
+    catalogs. A catalog filled this way belongs to exactly one integration
+    and does not accept manual uploads.</p>
+<p><strong>Feature Service</strong>
+:   The ArcGIS container that a terranode catalog maps to. Note that
+    "feature dataset" and "feature class" are geodatabase concepts that
+    publishing flattens away — the ArcGIS REST API exposes a portal item
+    (the Feature Service) and the layers and tables inside it, nothing
+    between them.</p>
+<p><strong>Sync target</strong>
+:   One remote layer or table an organization has subscribed to. It records
+    where the data comes from on the external side and which catalog it
+    lands in.</p>
 <p><strong>Project</strong>
 :   A configured field data collection effort: a boundary, a set of
     participating catalog layers, and a set of surveys. Projects <em>use</em>
