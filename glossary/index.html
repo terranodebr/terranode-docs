@@ -245,6 +245,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../roles-and-permissions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roles and permissions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../cli/" class="md-tabs__link">
         
   
@@ -373,6 +392,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cli/" class="md-nav__link">
         
   
@@ -475,6 +521,17 @@
 :   A built-in, always-present organization owned by the terranode team
     itself, used to publish a shared base catalog (base maps, reference
     layers) that other organizations can use without owning.</p>
+<p><strong>Role</strong>
+:   What a member is within an organization: <code>owner</code>, <code>editor</code> or <code>field</code>, shown
+    in the web app as Gestor, Editor and Coletor. A person has one role in each
+    organization they belong to, and an API key is minted with one. The role
+    decides which permissions the member holds.</p>
+<p><strong>Permission</strong>
+:   One thing a role may do, named <code>resource:action</code>, such as <code>catalog:write</code> or
+    <code>project:update</code>. The API enforces permissions on every request and reports
+    the ones a credential holds, so the app and the <code>tn</code> CLI offer only what
+    will work. Editing a particular project needs the <code>project:update</code>
+    permission and a part in that project: its creator, or one of its managers.</p>
 <p><strong>Catalog</strong>
 :   The set of reusable GIS resources — layers, styles, raster and vector
     sources — that an organization curates. Catalog data is imported and
