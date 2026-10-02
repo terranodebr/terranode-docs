@@ -571,6 +571,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sync-on-a-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync on a schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#if-terranode-cant-open-the-spreadsheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -687,6 +698,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sync-on-a-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync on a schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#if-terranode-cant-open-the-spreadsheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -776,6 +798,20 @@ novamente como nova fonte</strong> instead. terranode checks the tab again and
 creates a new data source from its current columns. The old data source stays
 in the catalog with its data, style and project layers, marked as
 <strong>Desconectada</strong>, and isn't updated anymore.</p>
+<h2 id="sync-on-a-schedule">Sync on a schedule<a class="headerlink" href="#sync-on-a-schedule" title="Permanent link">&para;</a></h2>
+<p>Choose <strong>Agendar sincronização</strong> in the tab's menu to sync it on its own:
+every hour, every day at a time, every week on a day at a time, or a custom
+cron expression in UTC. Times are in your browser's time zone. A schedule
+can't run more often than every 15 minutes, and a sync starts up to 15
+minutes after its time. ArcGIS layers can be scheduled the same way.</p>
+<p>A scheduled sync first checks whether the spreadsheet changed. If it didn't,
+nothing is downloaded, and the history shows the check as <strong>Sem alterações
+na origem</strong>. Choosing sync by hand always downloads.</p>
+<p>A schedule pauses, and the tab shows <strong>Agendamento pausado</strong> with the
+reason, when a sync is blocked (see above), after five failed syncs in a
+row, or while the integration needs reconnecting. Fix the cause, then choose
+<strong>Retomar</strong>, or sync by hand: a sync that works resumes the schedule.
+Reconnecting the integration resumes its schedules by itself.</p>
 <h2 id="if-terranode-cant-open-the-spreadsheet">If terranode can't open the spreadsheet<a class="headerlink" href="#if-terranode-cant-open-the-spreadsheet" title="Permanent link">&para;</a></h2>
 <p>terranode only reaches the spreadsheets picked in Google's window by the
 account that was connected. If the integration was reconnected with another
