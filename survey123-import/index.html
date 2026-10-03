@@ -11,8 +11,10 @@
       
       
       
-        <link rel="prev" href="../survey123-import/">
+        <link rel="prev" href="../google-sheets/">
       
+      
+        <link rel="next" href="../glossary/">
       
       
         
@@ -23,7 +25,7 @@
     
     
       
-        <title>Glossary - terranode Documentation</title>
+        <title>Importing from Survey123 - terranode Documentation</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glossary" class="md-skip">
+        <a href="#importing-from-survey123" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Glossary
+              Importing from Survey123
             
           </span>
         </div>
@@ -300,9 +302,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../survey123-import/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -319,11 +323,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
         
   
   
@@ -508,10 +510,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../survey123-import/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importing from Survey123
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -527,6 +556,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-xlsform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get the XLSForm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-comes-across" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What comes across
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-doesnt-come-across" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What doesn't come across
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -535,19 +628,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
@@ -563,7 +647,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -588,6 +671,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-xlsform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get the XLSForm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-comes-across" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What comes across
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-doesnt-come-across" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What doesn't come across
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -603,81 +738,144 @@
 
 
 
-<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
-<p><strong>Organization (org)</strong>
-:   The tenant boundary in terranode. Every user belongs to exactly one
-    organization. All catalog, project, and survey data is scoped to an
-    organization, both at the application level and, as a defense-in-depth
-    layer, via PostgreSQL Row-Level Security.</p>
-<p><strong>terranode (the perennial org)</strong>
-:   A built-in, always-present organization owned by the terranode team
-    itself, used to publish a shared base catalog (base maps, reference
-    layers) that other organizations can use without owning.</p>
-<p><strong>Role</strong>
-:   What a member is within an organization: <code>owner</code>, <code>editor</code> or <code>field</code>, shown
-    in the web app as Gestor, Editor and Coletor. A person has one role in each
-    organization they belong to, and an API key is minted with one. The role
-    decides which permissions the member holds.</p>
-<p><strong>Permission</strong>
-:   One thing a role may do, named <code>resource:action</code>, such as <code>catalog:write</code> or
-    <code>project:update</code>. The API enforces permissions on every request and reports
-    the ones a credential holds, so the app and the <code>tn</code> CLI offer only what
-    will work. Editing a particular project needs the <code>project:update</code>
-    permission and a part in that project: its creator, or one of its managers.</p>
-<p><strong>Catalog</strong>
-:   The set of reusable GIS resources — layers, styles, raster and vector
-    sources — that an organization curates. Catalog data is imported and
-    exported, not hand-edited feature-by-feature, in the initial release.</p>
-<p><strong>Layer</strong>
-:   A single named GIS dataset (vector or raster) in a catalog, with an
-    assigned style and metadata/tags. Layers are owned by exactly one
-    catalog but may be referenced by many projects.</p>
-<p><strong>Integration</strong>
-:   An organization's connection to an external GIS platform — today ArcGIS
-    Online or ArcGIS Enterprise. Data flows one way, into terranode: the
-    user picks layers on the external side and they are pulled into
-    catalogs. A catalog filled this way belongs to exactly one integration
-    and does not accept manual uploads.</p>
-<p><strong>Feature Service</strong>
-:   The ArcGIS container that a terranode catalog maps to. Note that
-    "feature dataset" and "feature class" are geodatabase concepts that
-    publishing flattens away — the ArcGIS REST API exposes a portal item
-    (the Feature Service) and the layers and tables inside it, nothing
-    between them.</p>
-<p><strong>Sync target</strong>
-:   One remote layer or table an organization has subscribed to. It records
-    where the data comes from on the external side and which catalog it
-    lands in.</p>
-<p><strong>Project</strong>
-:   A configured field data collection effort: a boundary, a set of
-    participating catalog layers, and a set of surveys. Projects <em>use</em>
-    catalog data — they never own or duplicate it.</p>
-<p><strong>Survey</strong>
-:   A configurable form (similar in spirit to SurveyMonkey) that field
-    users fill out on mobile devices while collecting GIS data — points,
-    lines, polygons, and attached media (photos, video, audio). A survey can
-    be created directly or from a survey template.</p>
-<p><strong>Survey template</strong>
-:   An organization-scoped reusable form definition. Creating a survey from a
-    template copies the template schema into the survey.</p>
-<p><strong>System survey template</strong>
-:   A global template configured by terranode administrators and listed
-    alongside organization-scoped templates.</p>
-<p><strong>Bundle</strong>
-:   The offline package a mobile client downloads before a field visit:
-    the project's boundary, participating layers, and survey definitions,
-    packaged so the field app can work with no network connectivity.</p>
-<p><strong>Registered installation (device)</strong>
-:   An app installation that has enrolled against a field seat, recorded so
-    an organization can see which installations are exercising its seats
-    and revoke one if needed. It is a record of a seat being exercised, not
-    an inventory of hardware — one physical tablet shared by three crew
-    members with their own accounts produces three registrations, since each
-    is a separate person's seat.</p>
-<p><strong>Row-Level Security (RLS)</strong>
-:   A native PostgreSQL feature enforcing tenant isolation at the database
-    layer, independent of application-level query filtering. Used here as
-    a second, fail-closed layer beneath terranode's org-scoping.</p>
+<h1 id="importing-from-survey123">Importing from Survey123<a class="headerlink" href="#importing-from-survey123" title="Permanent link">&para;</a></h1>
+<p>A form built in Survey123 can become a terranode survey without typing its
+questions again. Upload the form's XLSForm spreadsheet and terranode creates
+the survey and opens it in the builder. Anything terranode can't represent
+is left out or simplified, and listed for you to review.</p>
+<p>Organization owners and editors can import surveys.</p>
+<h2 id="get-the-xlsform">Get the XLSForm<a class="headerlink" href="#get-the-xlsform" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Survey123 Connect:</strong> the form's folder has a <code>.xlsx</code> file with the
+  form's name. That spreadsheet is the XLSForm.</li>
+<li><strong>Survey123 website:</strong> open the form, then use <strong>Export to XLSForm</strong> from
+  the form's menu.</li>
+</ul>
+<p>Only the form comes across. Responses already collected in Survey123 are not
+imported.</p>
+<h2 id="import">Import<a class="headerlink" href="#import" title="Permanent link">&para;</a></h2>
+<ol>
+<li>On <strong>Formulários</strong>, choose <strong>Novo formulário</strong> and then
+   <strong>Importar do Survey123</strong>.</li>
+<li>Drop the <code>.xlsx</code> file, or choose <strong>Selecionar arquivo</strong>. It can be up to
+   5 MB.</li>
+<li>The new survey opens in the builder, named after the form's title (or the
+   file's name if the form has no title). Above the fields, a summary says
+   what didn't come across. Expand <strong>O que mudou na importação</strong> to see each
+   item.</li>
+</ol>
+<p>The survey is already saved, and nobody has answered it yet, so any field can
+still be renamed, changed or removed. The summary isn't kept: once you
+dismiss it or leave the page, it doesn't come back.</p>
+<p>A file is refused, and no survey is created, when it isn't an <code>.xlsx</code>
+spreadsheet, has no <code>survey</code> sheet, has more than 2,000 rows on the <code>survey</code>
+sheet or 20,000 on the <code>choices</code> sheet, or has no question terranode can
+import.</p>
+<h2 id="what-comes-across">What comes across<a class="headerlink" href="#what-comes-across" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Survey123 question</th>
+<th>terranode field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>Short text, or long text with the <code>multiline</code> appearance</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>Email</td>
+</tr>
+<tr>
+<td><code>integer</code>, <code>decimal</code>, <code>range</code></td>
+<td>Number</td>
+</tr>
+<tr>
+<td><code>select_one</code>, <code>select_multiple</code></td>
+<td>Choice, single or multiple, with the options of its list</td>
+</tr>
+<tr>
+<td><code>date</code>, <code>dateTime</code></td>
+<td>Date, Date and time</td>
+</tr>
+<tr>
+<td><code>geopoint</code>, <code>geotrace</code>, <code>geoshape</code></td>
+<td>Geometry: point, line or polygon</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>Photos (one photo), or Signature with the <code>signature</code> appearance</td>
+</tr>
+<tr>
+<td><code>audio</code>, <code>barcode</code></td>
+<td>Audio, Barcode</td>
+</tr>
+</tbody>
+</table>
+<p>Also carried over:</p>
+<ul>
+<li><strong>Labels</strong>, without their formatting. When the form has labels in several
+  languages, Portuguese is used if there is one.</li>
+<li><strong>Required questions</strong> marked <code>yes</code>.</li>
+<li><strong>Choice options</strong>, using each choice's label. A <code>select_one … or_other</code>
+  question accepts answers typed in by the person collecting.</li>
+<li><strong>Number limits</strong> written as <code>. &gt;= 0 and . &lt;= 300</code>.</li>
+<li><strong>Display conditions</strong> (<code>relevant</code>) of these kinds, joined all by <code>and</code> or
+  all by <code>or</code>:<ul>
+<li><code>${condicao} = 'ruim'</code> on a single choice</li>
+<li><code>selected(${defeitos}, 'corrosao')</code> on a multiple choice</li>
+<li><code>${altura} &gt; 10</code>, and <code>=</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, on a number</li>
+<li><code>${observacao} != ''</code>, or <code>string-length(${observacao}) &gt; 0</code>: the
+  question was answered</li>
+</ul>
+</li>
+</ul>
+<p>A condition on a group applies to every question in it.</p>
+<h2 id="what-doesnt-come-across">What doesn't come across<a class="headerlink" href="#what-doesnt-come-across" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>In Survey123</th>
+<th>In terranode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repeats (<code>begin repeat</code>) and the questions in them</td>
+<td>Removed. Each one is listed as a removed section with its questions, at the top of the summary.</td>
+</tr>
+<tr>
+<td>Groups</td>
+<td>The questions stay, in order, without the group.</td>
+</tr>
+<tr>
+<td><code>note</code>, <code>calculate</code>, <code>hidden</code>, <code>file</code>, <code>rank</code>, and metadata like <code>start</code> or <code>username</code></td>
+<td>Removed</td>
+</tr>
+<tr>
+<td><code>time</code>, <code>select_one_from_file</code></td>
+<td>Short text</td>
+</tr>
+<tr>
+<td>A second location question</td>
+<td>Removed: a survey has one location</td>
+</tr>
+<tr>
+<td>Hints</td>
+<td>Removed</td>
+</tr>
+<tr>
+<td>Other display conditions, conditional <code>required</code>, other constraints</td>
+<td>Removed. The question is always shown, optional, and a number gets limits of −1,000,000,000 to 1,000,000,000. The summary quotes the original expression so you can redo it in the builder.</td>
+</tr>
+<tr>
+<td>Question names that aren't lowercase letters, digits and <code>_</code></td>
+<td>Adjusted, e.g. <code>Número_Torre</code> becomes <code>numero_torre</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
