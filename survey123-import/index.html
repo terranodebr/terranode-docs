@@ -797,8 +797,8 @@ import.</p>
 <td>Choice, single or multiple, with the options of its list</td>
 </tr>
 <tr>
-<td><code>date</code>, <code>dateTime</code></td>
-<td>Date, Date and time</td>
+<td><code>date</code>, <code>dateTime</code>, <code>time</code></td>
+<td>Date, Date and time, Time</td>
 </tr>
 <tr>
 <td><code>geopoint</code>, <code>geotrace</code>, <code>geoshape</code></td>
@@ -822,6 +822,8 @@ import.</p>
 <li><strong>Choice options</strong>, using each choice's label. A <code>select_one … or_other</code>
   question accepts answers typed in by the person collecting.</li>
 <li><strong>Number limits</strong> written as <code>. &gt;= 0 and . &lt;= 300</code>.</li>
+<li><strong>Defaults to the current date or time</strong>: <code>today()</code> or <code>now()</code> on a <code>date</code>
+  question, and <code>now()</code> on a <code>dateTime</code> or <code>time</code> question.</li>
 <li><strong>Display conditions</strong> (<code>relevant</code>) of these kinds, joined all by <code>and</code> or
   all by <code>or</code>:<ul>
 <li><code>${condicao} = 'ruim'</code> on a single choice</li>
@@ -855,8 +857,12 @@ import.</p>
 <td>Removed</td>
 </tr>
 <tr>
-<td><code>time</code>, <code>select_one_from_file</code></td>
+<td><code>select_one_from_file</code></td>
 <td>Short text</td>
+</tr>
+<tr>
+<td>Any other default value (<code>default</code>)</td>
+<td>Removed. The summary quotes it.</td>
 </tr>
 <tr>
 <td>A second location question</td>
